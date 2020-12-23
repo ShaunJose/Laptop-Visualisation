@@ -5,6 +5,7 @@ from utils import csv_utils
 from utils import list_utils
 from utils import data_type_utils
 from utils import memory_value_utils
+from processing import company_processing
 
 import re
 
@@ -30,16 +31,14 @@ if __name__ == "__main__":
 
     all_numbers_list = memory_value_utils.normalise_memory_2d_list(all_numbers_list, listy_list, constants.numeric_fields.index("Memory"))
 
-    print(listy_list[0])
-    print(all_numbers_list[0])
-    print(listy_list[259])
-    print(all_numbers_list[259])
-    print(listy_list[308])
-    print(all_numbers_list[308])
-    print(listy_list[500])
-    print(all_numbers_list[500])
-    print(listy_list[1001])
-    print(all_numbers_list[1001])
+    companies_count = company_processing.find_companies_count(data, headings.index("Company"))
 
+    i = 0
+    for key in companies_count:
+        i += companies_count[key]
+
+
+    print(companies_count)
+    print(i)
 
     # find_averages(constants.)
