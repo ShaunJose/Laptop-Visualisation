@@ -1,0 +1,11 @@
+# This Folder's .DS_Store
+.DS_Store
+
+# DS_Stores in folders
+**/.DS_Store
+
+# This folder's pytest cache
+.pytest_cache/
+
+# pycache
+**/__pycache__/
