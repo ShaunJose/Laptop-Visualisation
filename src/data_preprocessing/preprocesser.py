@@ -4,7 +4,7 @@ from parameters import constants
 from utils import csv_utils
 from utils import list_utils
 from utils import data_type_utils
-from utils import memory_value_utils
+from processing import memory_processing
 from processing import company_processing
 
 import re
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     all_numbers_list = data_type_utils.two_d_list_string_to_float(all_numbers_list)
 
-    all_numbers_list = memory_value_utils.normalise_memory_2d_list(all_numbers_list, listy_list, constants.numeric_fields.index("Memory"))
+    all_numbers_list = memory_processing.normalise_memory_2d_list(all_numbers_list, listy_list, constants.numeric_fields.index("Memory"))
 
     companies_count = company_processing.find_companies_count(data, headings.index("Company"))
 
