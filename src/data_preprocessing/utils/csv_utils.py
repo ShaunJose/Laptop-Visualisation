@@ -12,7 +12,7 @@ def read_csv(csv_filepath):
 
     data = []
 
-    # Open csv, and read data as a 2-d list
+    # Open csv, and read data row by row into a 2-d list
     with open("../../data/laptops.csv") as filepath:
         data_reader = csv.reader(filepath, delimiter = ",")
         for row in data_reader:
