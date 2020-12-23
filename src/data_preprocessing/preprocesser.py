@@ -4,6 +4,7 @@ from parameters import constants
 from utils import csv_utils
 from utils import list_utils
 from utils import data_type_utils
+from utils import memory_value_utils
 
 import re
 
@@ -26,6 +27,8 @@ if __name__ == "__main__":
         all_numbers_list.append(numbers_list)
 
     all_numbers_list = data_type_utils.two_d_list_string_to_float(all_numbers_list)
+
+    all_numbers_list = memory_value_utils.normalise_memory_2d_list(all_numbers_list, listy_list, constants.numeric_fields.index("Memory"))
 
     print(listy_list[0])
     print(all_numbers_list[0])
