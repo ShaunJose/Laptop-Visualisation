@@ -10,7 +10,7 @@ def normalise_memory_2d_list(values_list, full_list, memory_index):
 
 def __normalise_memory_in_list(value_list, memory_list, memory_index):
 
-    if "TB" in memory_list[memory_index]:
-        value_list[memory_index] = value_list[memory_index] * 1000
+    if "GB" in memory_list[memory_index]:
+        value_list[memory_index] = value_list[memory_index]/1000
 
     return value_list
