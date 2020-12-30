@@ -31,7 +31,7 @@ var DottedBarChart = {
                 .attr("x", function(d, i) {
                   return (i-0.5) * width/4
                 })
-                .attr("y", height*1.7)
+                .attr("y", height*1.9)
                 .attr("height", height/10)
                 .attr("width", width/4.5)
                 .attr("rx", 5)
@@ -49,7 +49,7 @@ var DottedBarChart = {
               pos = (i-0.5) * width/4 + width/9;
               return pos;
             })
-            .attr("y", height*1.7 + 50)
+            .attr("y", height*1.9 + 50)
             .style("font-size", "15px")
             .style("fill", function(d, i) {
               return colorscale(i)
@@ -57,6 +57,47 @@ var DottedBarChart = {
             .text( function(d, i) {
               return headings[i];
             })
-  }
 
+    //setup variables for the dots in the dotted column chart
+    const cols = 5
+    const rad = width/150
+    const valuesNum = values.length
+
+    //draw circles (dotted column chart)
+    for(let i = 0; i < valuesNum; i++)
+    {
+      //draw blocks of circles
+      const rows = Math.floor(values[i]/cols)
+      for(let j = 0; j < rows; j++)
+      {
+        for(let k = 0; k < cols; k++)
+        {
+          barSvg.append("circle")
+                      .attr("r", rad)
+                      .attr("cx", ((i-0.5) * width/4) + 5 + k * width/(4.5 * cols))
+                      .attr("cy", height*1.9 - 10 - j * 10)
+                      .style("fill", colorscale(i))
+        }
+      }
+
+      //draw last row of remaining circles, if any
+      const remainingCols = values[i] - (cols * rows)
+      for(let j = 0; j < remainingCols; j++)
+      {
+        barSvg.append("circle")
+                    .attr("r", rad)
+                    .attr("cx", ((i-0.5) * width/4) + 5 + j * width/(4.5 * cols))
+                    .attr("cy", height*1.9 - 10 - rows * 10)
+                    .style("fill", colorscale(i))
+      }
+
+    //draw the value text on top of the topmost dot row
+    barSvg.append("text")
+                .attr("x", (i-0.5) * width/4 + width/9)
+                .attr("y", height*1.9 - 15 - (rows + 1) * 10.5)
+                .style("font-size", "17px")
+                .style("fill", colorscale(i))
+                .text(values[i])
+    }
+  }
 };

@@ -323,7 +323,7 @@ function displayMoreInfo(d, i)
 
 
   //send to dotted bar chart drawer
-  values = [67,84,54,24,43,23,65,86,34,23,54,65,23,54,7,78,23,43,23];
+  values = [67,84,54,1125,43,23,65,86,34,23,54,65,23,54,7,78,23,43,23];
   headings = ["Apple", "HP", "Acer", "Asus", "Dell", "Lenovo","Chuwi", "MSI", "Microsoft", "Toshiba", "Huawei", "Xiaomi","Vero", "Razer", "Mediacom", "Samsung", "Google", "Fujistu", "LG"];
   DottedBarChart.drawChart(values, headings, "#more_info_div");
 
