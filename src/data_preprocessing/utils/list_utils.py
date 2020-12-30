@@ -63,3 +63,11 @@ def multiply_all_elems(my_list, factor):
         my_list[i] = my_list[i] * factor
 
     return my_list
+
+
+def round_all_elems(my_list, dec_places):
+
+    for i in range(0, len(my_list)):
+        my_list[i] = round(my_list[i], dec_places)
+
+    return my_list

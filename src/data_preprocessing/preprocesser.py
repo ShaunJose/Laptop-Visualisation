@@ -52,16 +52,20 @@ if __name__ == "__main__":
     avg_screen_by_company = average_calculator.average_company_screen(all_numbers_list, data, companies_count, companies_list, 0)
     # convert screen size inches to mm
     avg_screen_by_company = list_utils.multiply_all_elems(avg_screen_by_company, 25.4)
+    avg_screen_by_company = list_utils.round_all_elems(avg_screen_by_company, 2)
     print(avg_screen_by_company)
     avg_memory_by_company = average_calculator.average_company_memory(all_numbers_list, data, companies_count, companies_list, 2)
     # convert averages from TB to GB
     avg_memory_by_company = list_utils.multiply_all_elems(avg_memory_by_company, 1000)
+    avg_memory_by_company = list_utils.round_all_elems(avg_memory_by_company, 2)
     print(avg_memory_by_company)
     avg_weight_by_company = average_calculator.average_company_weight(all_numbers_list, data, companies_count, companies_list, 3)
     # convert average weight from kg to grams
     avg_weight_by_company = list_utils.multiply_all_elems(avg_weight_by_company, 1000)
+    avg_weight_by_company = list_utils.round_all_elems(avg_weight_by_company, 2)
     print(avg_weight_by_company)
     avg_price_by_company = average_calculator.average_company_price(all_numbers_list, data, companies_count, companies_list, 4)
+    avg_price_by_company = list_utils.round_all_elems(avg_price_by_company, 2)
     print(avg_price_by_company)
 
     # save all processed values to files
@@ -74,6 +78,4 @@ if __name__ == "__main__":
     json_utils.write_to_file(constants.saving_directory + "average_company_memory.json", avg_memory_by_company)
     json_utils.write_to_file(constants.saving_directory + "average_company_weight.json", avg_weight_by_company)
     json_utils.write_to_file(constants.saving_directory + "average_company_price.json", avg_price_by_company)
-
-
     # find_averages(constants.)
