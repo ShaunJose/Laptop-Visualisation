@@ -50,6 +50,8 @@ if __name__ == "__main__":
     print(average_data_values)
 
     avg_screen_by_company = average_calculator.average_company_screen(all_numbers_list, data, companies_count, companies_list, 0)
+    # convert screen size inches to mm
+    avg_screen_by_company = list_utils.multiply_all_elems(avg_screen_by_company, 25.4)
     print(avg_screen_by_company)
     avg_memory_by_company = average_calculator.average_company_memory(all_numbers_list, data, companies_count, companies_list, 2)
     # convert averages from TB to GB
