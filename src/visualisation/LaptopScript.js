@@ -26,7 +26,7 @@ var data = [
 // draw radar chart using data
 RadarChart.drawChart("#chart_div", data);
 
-}, 1000);
+}, 500);
 
 function theFunc(fields)
 {

@@ -55,3 +55,11 @@ def filter_2d_list(two_d_list, all_fields, wanted_fields):
         filtered_2d_list.append(filtered_list)
 
     return filtered_2d_list
+
+
+def multiply_all_elems(my_list, factor):
+
+    for i in range(0, len(my_list)):
+        my_list[i] = my_list[i] * factor
+
+    return my_list

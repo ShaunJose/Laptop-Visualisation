@@ -371,8 +371,8 @@ function getText(index)
   {
     case 0: return "Screen Size (inches)";
     case 1: return "Price (euros)";
-    case 2: return "Weight (kg)";
-    case 3: return "Memory (TB)";
+    case 2: return "Weight (grams)";
+    case 3: return "Hard disk Memory (GB)";
     case 4: return "RAM (GB)";
     default: return "";
   }
