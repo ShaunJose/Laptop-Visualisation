@@ -1,23 +1,18 @@
 // Code modified from https://gist.github.com/nbremer/6506614
+
+// init the variables
 var width = 300,
 	height = 280;
-
-const colorscale = d3.scaleOrdinal(d3.schemeCategory10);
-
-
 var fields = [];
 var averages = [];
 
+// get data from json files
 theFunc(fields, averages);
+
+// waiting for the data fetching function to finish, before drawing charts
 setTimeout(function() {
-	console.log(fields.length);
-	console.log(fields[0]);
 
-var legendOptions = [ 'You', 'Average' ];
-var boxesChecked = [ true, false ]
-var axisTitles = [ "Topic 1", "Topic 2", "Topic 3", "Topic 4", "Topic 5" ];
-
-//Data
+//Set data in 2d array
 var data = [
 		  [
 			{ axis: fields[0], value: averages[0] },
@@ -28,7 +23,7 @@ var data = [
 			]
 		];
 
-// draw shtuff
+// draw radar chart using data
 RadarChart.drawChart("#chart_div", data);
 
 }, 1000);
@@ -42,7 +37,6 @@ function theFunc(fields)
 				{
 					fields.push(data[i]);
 				}
-				console.log("HERE:" + fields.length);
 			});
 
 	fetch("./preprocessed_data/average_values.json")

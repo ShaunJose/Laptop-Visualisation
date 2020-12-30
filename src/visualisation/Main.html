@@ -7,8 +7,10 @@
     <title> Laptops Overview </title>
     <script src = "http://d3js.org/d3.v5.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-	  <script src = "RadarChart.js"></script>
+    <!-- Add all my js files which draws charts -->
     <script type="text/javascript" src="LaptopScript.js"></script>
+	  <script type="text/javascript" src = "RadarChart.js"></script>
+    <script type="text/javascript" src="DottedBarChart.js"></script>
 
 	<style>
     div {
@@ -39,5 +41,9 @@
     </div>
 
   </body>
+
+  <script>
+    const colorscale = d3.scaleOrdinal().range(['#4363d8', '#e6194b', '#3cb44b', '#ffe119', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#black', '#fffac8', '#800000', '#aaffc3', '#34495e', '#ffd8b1', '#000075']);
+  </script>
 
 </html>
